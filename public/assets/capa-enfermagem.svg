@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1120" role="img" aria-labelledby="title">
+<title id="title">Mapa da Aprovação em Enfermagem, nova capa editorial</title>
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#e8e6ef" stroke-width="1"/></pattern></defs>
+<rect width="800" height="1120" fill="#fff"/>
+<rect width="16" height="1120" fill="#6730a0"/>
+<path d="M16 0h784v22H16" fill="#6730a0"/>
+<text x="70" y="95" fill="#6730a0" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="3">MAPA DA APROVAÇÃO</text>
+<text x="66" y="202" fill="#19233f" font-family="Arial,sans-serif" font-size="68" font-weight="900">ENFERMAGEM</text>
+<path d="M70 235h90" stroke="#e72b67" stroke-width="8"/>
+<text x="70" y="287" fill="#657087" font-family="Arial,sans-serif" font-size="24">MAPAS MENTAIS PARA CONCURSOS</text>
+<rect x="48" y="338" width="704" height="527" rx="24" fill="#faf9fc"/>
+<rect x="48" y="338" width="704" height="527" rx="24" fill="url(#grid)"/>
+<g fill="none" stroke-width="5" stroke-linecap="round">
+<path d="M400 570v-55q0-24-24-24H220v-45" stroke="#e72b67"/>
+<path d="M400 570v-55q0-24 24-24h157v-45" stroke="#008e95"/>
+<path d="M400 629v68q0 25-25 25H206v38" stroke="#6730a0"/>
+<path d="M400 629v68q0 25 25 25h169v38" stroke="#dca712"/>
+</g>
+<rect x="286" y="549" width="228" height="112" rx="23" fill="#6730a0"/>
+<text x="400" y="614" fill="#fff" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700">UM TEMA</text>
+<g font-family="Arial,sans-serif" font-size="21" font-weight="700" text-anchor="middle">
+<rect x="115" y="392" width="210" height="74" rx="16" fill="#fff" stroke="#edbbcd" stroke-width="2"/><text x="220" y="438" fill="#d02560">CONCEITOS</text>
+<rect x="476" y="392" width="210" height="74" rx="16" fill="#fff" stroke="#a4d9da" stroke-width="2"/><text x="581" y="438" fill="#007d83">RELAÇÕES</text>
+<rect x="101" y="753" width="210" height="74" rx="16" fill="#fff" stroke="#ccb6e4" stroke-width="2"/><text x="206" y="799" fill="#6730a0">APLICAÇÕES</text>
+<rect x="489" y="753" width="210" height="74" rx="16" fill="#fff" stroke="#ead69a" stroke-width="2"/><text x="594" y="799" fill="#926d0b">PERGUNTAS</text>
+</g>
+<text x="70" y="953" fill="#19233f" font-family="Arial,sans-serif" font-size="61" font-weight="900">240</text>
+<text x="214" y="925" fill="#19233f" font-family="Arial,sans-serif" font-size="25" font-weight="700">MAPAS MENTAIS</text>
+<text x="214" y="962" fill="#657087" font-family="Arial,sans-serif" font-size="21">UMA PÁGINA. UM ASSUNTO.</text>
+<path d="M70 1004h660" stroke="#e4e7ed" stroke-width="2"/>
+<text x="70" y="1057" fill="#657087" font-family="Arial,sans-serif" font-size="21">SUS · FUNDAMENTOS · CLÍNICA · REVISÃO</text>
+</svg>

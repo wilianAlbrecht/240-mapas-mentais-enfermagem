@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1414" role="img" aria-labelledby="title desc">
+  <title id="title">Capa de rascunho do Mapa da Aprovação em Enfermagem</title>
+  <desc id="desc">Capa editorial criada para a prévia da página. A coleção de 240 mapas ainda está em produção.</desc>
+  <rect width="1000" height="1414" rx="32" fill="#fbfaf6"/>
+  <rect x="37" y="37" width="926" height="1340" rx="27" fill="#101a40"/>
+  <path d="M37 273h926" stroke="#f7bd13" stroke-width="19"/>
+  <path d="M37 1140h926" stroke="#ee0b69" stroke-width="17"/>
+  <circle cx="806" cy="167" r="89" fill="#f7bd13"/>
+  <text x="806" y="157" text-anchor="middle" fill="#101a40" font-family="Arial,sans-serif" font-weight="900" font-size="54">240</text>
+  <text x="806" y="189" text-anchor="middle" fill="#101a40" font-family="Arial,sans-serif" font-weight="900" font-size="24">PLANEJADOS</text>
+  <text x="94" y="149" fill="#fff" font-family="Arial,sans-serif" font-weight="900" font-size="40">MAPA DA</text>
+  <text x="94" y="218" fill="#f7bd13" font-family="Arial,sans-serif" font-weight="900" font-size="72">APROVAÇÃO</text>
+  <text x="94" y="400" fill="#fff" font-family="Arial,sans-serif" font-weight="900" font-size="91">ENFERMAGEM</text>
+  <text x="96" y="468" fill="#c5d2ea" font-family="Arial,sans-serif" font-weight="700" font-size="31">MAPAS MENTAIS PARA REVISÃO DE CONCURSOS</text>
+  <g fill="none" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M503 790L286 655M503 790L716 645M503 790L266 917M503 790L721 928" stroke="#fff"/>
+  </g>
+  <circle cx="503" cy="790" r="114" fill="#5a2191" stroke="#fff" stroke-width="9"/>
+  <circle cx="268" cy="648" r="70" fill="#ee0b69" stroke="#fff" stroke-width="7"/>
+  <circle cx="726" cy="636" r="70" fill="#008e95" stroke="#fff" stroke-width="7"/>
+  <circle cx="251" cy="926" r="70" fill="#f7bd13" stroke="#fff" stroke-width="7"/>
+  <circle cx="733" cy="937" r="70" fill="#4275c8" stroke="#fff" stroke-width="7"/>
+  <text x="503" y="805" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-weight="900" font-size="32">REVISÃO</text>
+  <text x="500" y="1230" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-weight="900" font-size="45">SUS • CLÍNICA • FUNDAMENTOS</text>
+  <text x="500" y="1295" text-anchor="middle" fill="#f7bd13" font-family="Arial,sans-serif" font-weight="700" font-size="31">CAPA DE RASCUNHO</text>
+</svg>
