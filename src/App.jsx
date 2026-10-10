@@ -8,21 +8,33 @@ const painIcons = [Clock3, Layers3, FileQuestion, BookOpen, Brain, AlertTriangle
 const mechanismIcons = [BookOpen, SearchCheck, Layers3, ListChecks];
 const offerDurationMs = 30 * 60 * 1000;
 const offerDeadlineStorageKey = 'mapa-aprovacao-offer-deadline';
+const offerProlongedStorageKey = 'mapa-aprovacao-offer-prolonged';
 
-function getOfferDeadline() {
+function createStoredOfferDeadline(prolonged = false) {
+  const nextDeadline = Date.now() + offerDurationMs;
+  try {
+    window.localStorage.setItem(offerDeadlineStorageKey, String(nextDeadline));
+    window.localStorage.setItem(offerProlongedStorageKey, prolonged ? '1' : '0');
+  } catch {
+    // Ignore storage failures and keep the in-memory deadline for this session.
+  }
+  return { deadline: nextDeadline, prolonged };
+}
+
+function getOfferState() {
   const configuredDeadline = Date.parse(comercial.offerExpiresAt || '');
-  if (Number.isFinite(configuredDeadline)) return configuredDeadline;
-  if (typeof window === 'undefined') return Date.now() + offerDurationMs;
+  if (Number.isFinite(configuredDeadline) && configuredDeadline > Date.now()) {
+    return { deadline: configuredDeadline, prolonged: false };
+  }
+  if (typeof window === 'undefined') return { deadline: Date.now() + offerDurationMs, prolonged: false };
 
   try {
     const storedDeadline = Number(window.localStorage.getItem(offerDeadlineStorageKey));
-    if (Number.isFinite(storedDeadline) && storedDeadline > 0) return storedDeadline;
-
-    const nextDeadline = Date.now() + offerDurationMs;
-    window.localStorage.setItem(offerDeadlineStorageKey, String(nextDeadline));
-    return nextDeadline;
+    const prolonged = window.localStorage.getItem(offerProlongedStorageKey) === '1';
+    if (Number.isFinite(storedDeadline) && storedDeadline > Date.now()) return { deadline: storedDeadline, prolonged };
+    return createStoredOfferDeadline(Number.isFinite(storedDeadline) && storedDeadline > 0);
   } catch {
-    return Date.now() + offerDurationMs;
+    return { deadline: Date.now() + offerDurationMs, prolonged: false };
   }
 }
 
@@ -34,21 +46,22 @@ function formatOfferTime(milliseconds) {
 }
 
 function OfferCountdownBar() {
-  const [deadline] = useState(getOfferDeadline);
+  const [offerState, setOfferState] = useState(getOfferState);
   const [now, setNow] = useState(() => Date.now());
-  const remaining = deadline - now;
-  const ended = remaining <= 0;
+  const remaining = offerState.deadline - now;
 
   useEffect(() => {
-    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    const timer = window.setInterval(() => {
+      const currentTime = Date.now();
+      setNow(currentTime);
+      setOfferState(state => state.deadline <= currentTime ? createStoredOfferDeadline(true) : state);
+    }, 1000);
     return () => window.clearInterval(timer);
   }, []);
 
   return <header className="brand-bar" aria-live="polite">
-    {ended ? <span className="offer-countdown__ended">OFERTA ENCERRADA</span> : <>
-      <span className="offer-countdown__copy">OFERTA ESPECIAL TERMINA EM</span>
-      <span className="offer-countdown__timer">{formatOfferTime(remaining)}</span>
-    </>}
+    <span className="offer-countdown__copy">{offerState.prolonged ? 'OFERTA PROLONGADA' : 'OFERTA ESPECIAL TERMINA EM'}</span>
+    <span className="offer-countdown__timer">{formatOfferTime(remaining)}</span>
   </header>;
 }
 

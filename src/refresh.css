@@ -8,7 +8,7 @@ body.preview-open{overflow:hidden}
 .hero{background:#fff;padding:30px 20px 60px}
 .hero-flow{gap:20px}
 .hero .hero-title{display:flex;flex-direction:column;align-items:center;gap:22px;width:100%;max-width:860px;font-size:inherit;line-height:inherit}
-.question-ribbon{display:block;width:100%;padding:14px 18px;border-radius:6px;background:var(--green);color:#fff;font:800 clamp(21px,2.6vw,29px)/1.2 var(--font-title);letter-spacing:.015em;text-transform:uppercase}
+.question-ribbon{display:inline;padding:.06em .2em .12em;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 320 72'%3E%3Cpath fill='%2335b96d' fill-opacity='.8' d='M6 43C37 41 70 35 108 29c48-8 91-13 137-8 36 4 61 10 70 18 2 9-10 15-34 17-42 3-88-3-133 1-48 5-91 11-132 5C7 60 2 53 6 43Z'/%3E%3Cpath fill='%2335b96d' fill-opacity='.38' d='M12 47c40-1 78-12 121-18 42-6 82-6 123-1 25 3 43 8 54 13-7 8-34 9-67 7-38-3-73-2-113 4-38 6-77 10-114 5-6-3-7-7-4-10Z'/%3E%3Cpath fill='%23ffffff' fill-opacity='.15' d='M23 42c42-2 78-12 121-17 39-5 82-4 129 3 0 2-1 4-2 6-47-6-87-7-128-2-42 5-78 15-121 17-1-2-1-5 1-7Z'/%3E%3Cpath fill='%2335b96d' fill-opacity='.25' d='M8 55c33 8 80 2 124-4 45-7 88-8 130-4 22 2 39 2 51-3-1 5-8 10-24 12-43 5-85-2-130 3-52 6-99 13-143 5-8-2-11-5-8-9Z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:100% 100%;box-decoration-break:clone;-webkit-box-decoration-break:clone;color:var(--ink);font:800 clamp(21px,2.6vw,29px)/1.2 var(--font-title);letter-spacing:.015em;text-transform:uppercase}
 .hero-title-main{display:block;max-width:650px;color:var(--ink);font:800 clamp(30px,4.2vw,48px)/1.1 var(--font-title);letter-spacing:-.02em;text-wrap:balance}
 .hero-title-main strong{color:#6730a0;font-weight:800}
 .hero-media{width:min(580px,100%);height:350px;margin:0 auto}
@@ -99,7 +99,7 @@ body.preview-open{overflow:hidden}
 .receive-card li{font-size:14px;font-weight:400;line-height:1.5}
 .receive-card li svg{width:18px;height:18px;color:#00858b}
 .offer{background:#19233f;border-top:0}
-.plan-card{border:1px solid #d9c7eb;box-shadow:0 15px 45px rgba(8,17,40,.14);border-radius:16px}
+.plan-card{border:1px solid #d9c7eb;box-shadow:0 15px 45px rgba(8,17,40,.14);border-radius:16px;overflow:visible}
 .plan-badge{border-radius:6px;font-weight:700;box-shadow:none}
 .plan-kicker{font-size:10px;font-weight:700}
 .plan-card h3{font-size:28px}
@@ -148,7 +148,7 @@ body.preview-open{overflow:hidden}
  .offer-countdown__timer{min-width:56px;padding:5px 7px;font-size:13px}
  .hero{padding:20px 18px 36px}.hero-flow{gap:18px}
  .hero .hero-title{gap:17px}
- .question-ribbon{padding:12px 10px;font-size:20px;line-height:1.17;border-radius:5px;text-wrap:balance}
+ .question-ribbon{padding:.04em .12em .08em;font-size:20px;line-height:1.17;text-wrap:balance}
  .hero-title-main{font-size:30px;line-height:1.12;max-width:355px}
  .hero-media{width:100%;height:278px;margin:0}
  .product-sheet--left{left:6%}.product-sheet--right{right:6%}
@@ -177,7 +177,7 @@ body.preview-open{overflow:hidden}
  .access-badge{font-size:9.5px;padding:8px 10px}
  .plan-card{padding:32px 20px 24px}.plan-card h3{font-size:26px}.plan-card li{font-size:13px}
  .plan-mockup{height:225px}.bundle-cover{height:64%}.bundle-cover--questions{transform:translate(calc(-50% - 84px),-48%) rotate(-12deg)}.bundle-cover--calculos{transform:translate(calc(-50% - 28px),-51%) rotate(-4deg)}.bundle-cover--main{transform:translate(calc(-50% + 28px),-51%) rotate(4deg)}.bundle-cover--edital{transform:translate(calc(-50% + 84px),-48%) rotate(12deg)}.bundle-devices{right:2%;bottom:12%;width:34%}.plan-card .btn{font-size:14px;white-space:normal}
- .price .price-original{font-size:18px}.price .price-placeholder{font-size:48px}.offer-pending{font-size:11px}
+ .price .price-original{font-size:18px}.price .price-placeholder{font-size:54px}.offer-pending{font-size:11px}
  .guarantee-card{padding:26px 20px}.guarantee-seal{width:216px;height:216px;margin-bottom:15px}.guarantee-card h2{font-size:23px}.safety-cards article{padding:22px 20px}
  .faq summary{font-size:14px;padding:18px 0}.faq details p{font-size:13px}
 }
@@ -210,7 +210,7 @@ body.preview-open{overflow:hidden}
 .btn--disabled,.btn--disabled:hover{background:#168442;color:#fff;opacity:.7;box-shadow:none}
 .price .price-label{display:block;margin:0 0 3px;color:#64748b;font-size:10px;font-weight:800;line-height:1;text-transform:uppercase;letter-spacing:.12em}
 .price .price-original{display:block;margin:0 0 10px;color:#dc2626;font-size:20px;font-weight:700;line-height:1;text-decoration:line-through;text-decoration-thickness:2px}
-.price .price-placeholder{font-size:48px;font-weight:800;letter-spacing:-.025em;color:#16A34A}
+.price .price-placeholder{font-size:62px;font-weight:800;letter-spacing:-.025em;color:#16A34A}
 .plan-card .btn--offer-cta{
   position:relative;
   isolation:isolate;
@@ -220,6 +220,7 @@ body.preview-open{overflow:hidden}
   color:#fff;
   font-weight:800;
   opacity:1;
+  margin:8px auto 10px;
   box-shadow:0 7px 0 #15803d,0 18px 34px rgba(22,163,74,.32);
   transform:translateZ(0);
   animation:offerCtaBreath 2.5s ease-in-out infinite;
