@@ -18,7 +18,7 @@ body.preview-open{overflow:hidden}
 .cover-book{position:absolute;z-index:3;top:4%;left:50%;height:91%;aspect-ratio:800/1120;transform:translateX(-50%) perspective(1100px) rotateY(-8deg) rotate(-1deg);border-radius:2px 6px 6px 2px;background:#fff;box-shadow:-7px 3px 0 #643299,-10px 4px 0 #e5dbea,3px 18px 26px rgba(25,35,63,.2);overflow:hidden}
 .product-composition .cover-book img{position:static;display:block;width:100%;height:100%;object-fit:contain;filter:none}
 .hero-sub{max-width:540px;color:#596378;font-size:17px;line-height:1.55;text-wrap:balance}
-.btn{max-width:370px;min-height:56px;padding:16px 25px;border:0;border-radius:10px;font-size:15px;font-weight:700;letter-spacing:.025em;box-shadow:0 5px 14px rgba(103,48,160,.14)}
+.btn{max-width:370px;min-height:56px;padding:16px 25px;border:0;border-radius:10px;font-size:17px;font-weight:800;letter-spacing:.02em;gap:9px;box-shadow:0 5px 14px rgba(103,48,160,.14)}
 .btn:hover{background:#51227e;transform:translateY(-1px)}
 .btn:focus-visible,.rail:focus-visible,.rail-arrow:focus-visible,summary:focus-visible,.gallery-card a:focus-visible{outline:3px solid #008e95;outline-offset:4px}
 .hero-bullets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:750px;gap:14px;margin:2px auto 0}
@@ -116,7 +116,7 @@ body.preview-open{overflow:hidden}
 .price .price-placeholder{font-size:27px}
 .btn--disabled,.btn--disabled:hover{background:#e8ebf0;color:#606a7a;box-shadow:none}
 .guarantee-card,.safety-cards article{box-shadow:none;border-radius:12px}
-.guarantee-seal{width:168px;height:168px;object-fit:contain;margin-bottom:18px}
+.guarantee-seal{width:252px;height:252px;object-fit:contain;margin-bottom:18px}
 .guarantee-card h2{font-size:25px}
 .safety-cards p,.guarantee-card p{font-size:14px;line-height:1.6}
 .faq{background:#fff}
@@ -154,7 +154,7 @@ body.preview-open{overflow:hidden}
  .hero-sub{font-size:15px;line-height:1.55;max-width:310px}
  .hero-bullets{grid-template-columns:1fr;max-width:310px;gap:9px;padding-top:5px}
  .hero-bullets li{font-size:13px;align-items:center}
- .btn{min-height:52px;padding:15px 20px;font-size:14px;max-width:340px}
+ .btn{min-height:52px;padding:15px 20px;font-size:15.5px;max-width:340px}
  .avatar-proof{font-size:11px;max-width:295px;line-height:1.5}
  .section{padding:42px 20px}.section-flow{gap:23px}
  .section-title h2,.mid-pitch h2{font-size:29px;line-height:1.15}
@@ -175,12 +175,31 @@ body.preview-open{overflow:hidden}
  .receive-card ul{grid-template-columns:1fr;gap:12px}.receive-card li{font-size:13px}
  .access-badge{font-size:9.5px;padding:8px 10px}
  .plan-card{padding:32px 20px 24px}.plan-card h3{font-size:26px}.plan-card li{font-size:13px}
- .plan-mockup{height:225px}.bundle-cover{height:64%}.bundle-cover--questions{transform:translate(calc(-50% - 84px),-48%) rotate(-12deg)}.bundle-cover--calculos{transform:translate(calc(-50% - 28px),-51%) rotate(-4deg)}.bundle-cover--main{transform:translate(calc(-50% + 28px),-51%) rotate(4deg)}.bundle-cover--edital{transform:translate(calc(-50% + 84px),-48%) rotate(12deg)}.bundle-devices{right:2%;bottom:12%;width:34%}.plan-card .btn{font-size:12px;white-space:normal}
+ .plan-mockup{height:225px}.bundle-cover{height:64%}.bundle-cover--questions{transform:translate(calc(-50% - 84px),-48%) rotate(-12deg)}.bundle-cover--calculos{transform:translate(calc(-50% - 28px),-51%) rotate(-4deg)}.bundle-cover--main{transform:translate(calc(-50% + 28px),-51%) rotate(4deg)}.bundle-cover--edital{transform:translate(calc(-50% + 84px),-48%) rotate(12deg)}.bundle-devices{right:2%;bottom:12%;width:34%}.plan-card .btn{font-size:14px;white-space:normal}
  .price .price-original{font-size:18px}.price .price-placeholder{font-size:48px}.offer-pending{font-size:11px}
- .guarantee-card{padding:26px 20px}.guarantee-seal{width:144px;height:144px;margin-bottom:15px}.guarantee-card h2{font-size:23px}.safety-cards article{padding:22px 20px}
+ .guarantee-card{padding:26px 20px}.guarantee-seal{width:216px;height:216px;margin-bottom:15px}.guarantee-card h2{font-size:23px}.safety-cards article{padding:22px 20px}
  .faq summary{font-size:14px;padding:18px 0}.faq details p{font-size:13px}
 }
-@media(max-width:350px){.hero-title-main{font-size:27px}.question-ribbon{font-size:18px}.hero-media{height:245px}.collection-fan img:nth-child(3){left:42%}}
+@media(max-width:250px){
+ .brand-bar{padding-inline:10px}
+ .hero{padding-inline:14px}
+ .hero-title-main{font-size:27px}
+ .question-ribbon{font-size:18px}
+ .hero-media{height:245px}
+ .section{padding-inline:16px}
+ .pain-grid{grid-template-columns:1fr}
+ .pain-chip{min-height:0}
+ .collection-fan img:nth-child(3){left:42%}
+ .plan-card{padding-inline:16px}
+ .bonus-cover,.bonus-mockup--notebook .bonus-cover,.bonus-mockup--spreadsheet .bonus-cover{width:min(112px,58%);max-width:none;height:auto}
+ .plan-mockup{height:198px}
+ .bundle-cover{height:58%}
+ .bundle-cover--questions{transform:translate(calc(-50% - 62px),-48%) rotate(-12deg)}
+ .bundle-cover--calculos{transform:translate(calc(-50% - 22px),-51%) rotate(-4deg)}
+ .bundle-cover--main{transform:translate(calc(-50% + 22px),-51%) rotate(4deg)}
+ .bundle-cover--edital{transform:translate(calc(-50% + 62px),-48%) rotate(12deg)}
+ .bundle-devices{width:31%}
+}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
 /* Preço e CTA confirmados em 09/10/2026. */
@@ -188,7 +207,8 @@ body.preview-open{overflow:hidden}
 .btn{background:#168442;color:#fff;box-shadow:0 5px 14px rgba(22,132,66,.16)}
 .btn:hover{background:#106a34}
 .btn--disabled,.btn--disabled:hover{background:#168442;color:#fff;opacity:.7;box-shadow:none}
-.price .price-original{display:block;margin:0 0 4px;color:#94A3B8;font-size:20px;font-weight:700;line-height:1;text-decoration:line-through;text-decoration-thickness:2px}
+.price .price-label{display:block;margin:0 0 3px;color:#64748b;font-size:10px;font-weight:800;line-height:1;text-transform:uppercase;letter-spacing:.12em}
+.price .price-original{display:block;margin:0 0 10px;color:#dc2626;font-size:20px;font-weight:700;line-height:1;text-decoration:line-through;text-decoration-thickness:2px}
 .price .price-placeholder{font-size:48px;font-weight:800;letter-spacing:-.025em;color:#16A34A}
 .plan-card .btn--offer-cta{
   position:relative;

@@ -1,5 +1,5 @@
 import { Children, cloneElement, useEffect, useRef, useState } from 'react';
-import { AlertTriangle, BookOpen, Brain, Check, ChevronLeft, ChevronRight, Clock3, FileCheck2, FileQuestion, Layers3, ListChecks, MonitorSmartphone, SearchCheck, X } from 'lucide-react';
+import { AlertTriangle, ArrowDown, BookOpen, Brain, Check, ChevronLeft, ChevronRight, Clock3, FileCheck2, FileQuestion, Layers3, ListChecks, MonitorSmartphone, SearchCheck, X } from 'lucide-react';
 import { content } from './content.js';
 import { comercial } from './comercial.js';
 import guaranteeSeal from '../img/Selo Dourado de Compra Protegida.png';
@@ -8,7 +8,8 @@ const painIcons = [Clock3, Layers3, FileQuestion, BookOpen, Brain, AlertTriangle
 const mechanismIcons = [BookOpen, SearchCheck, Layers3, ListChecks];
 
 function CTA({ label = 'QUERO O MAPA DA APROVAÇÃO', href = '#oferta', className = 'btn--primary' }) {
-  return <a className={`btn ${className}`.trim()} href={href}>{label}</a>;
+  const showDownArrow = className.includes('btn--primary');
+  return <a className={`btn ${className}`.trim()} href={href}>{label}{showDownArrow && <ArrowDown size={20} aria-hidden="true" />}</a>;
 }
 
 function SectionTitle({ children, lead }) {
@@ -48,7 +49,7 @@ function BonusMockup({ type }) {
   </div>;
 }
 
-function ScrollRail({ children, label, className = '', interval = 3000, auto = false }) {
+function ScrollRail({ children, label, className = '', interval = 1500, auto = false }) {
   const ref = useRef(null);
   const paused = useRef(false);
   const visible = useRef(false);
@@ -227,7 +228,7 @@ export default function App() {
         <article className="plan-card" id="checkout"><p className="plan-badge">240 MAPAS · 9 MÓDULOS</p><p className="plan-kicker">OFERTA ESPECIAL</p><h3>Mapa da Aprovação em Enfermagem</h3>
           <div className="plan-mockup"><ProductBundleMockup /></div>
           <ul>{content.included.map(item => <li key={item}><Check size={20}/><span>{item}</span></li>)}</ul>
-          <div className="price"><s className="price-original">R$ 97,90</s><strong className="price-placeholder">{comercial.price.startsWith('[') ? 'Preço a definir' : comercial.price}</strong></div>
+          <div className="price"><span className="price-label">de</span><s className="price-original">R$ 97,90</s><span className="price-label">para</span><strong className="price-placeholder">{comercial.price.startsWith('[') ? 'Preço a definir' : comercial.price}</strong></div>
           {checkoutEnabled ? <CTA href={comercial.checkoutUrl} className="btn--offer-cta" /> : <button type="button" className="btn btn--disabled btn--offer-cta" disabled>QUERO O MAPA DA APROVAÇÃO</button>}
         </article>
       </div></section>
