@@ -31,6 +31,7 @@ function ProductBundleMockup() {
     <img className="bundle-cover bundle-cover--bonus bundle-cover--calculos" src="/assets/bonus-calculos-cover-thumb.webp" alt="Capa do bônus Treino de Cálculos de Enfermagem" width="636" height="900" loading="lazy" />
     <img className="bundle-cover bundle-cover--bonus bundle-cover--edital" src="/assets/bonus-edital-cover-thumb.webp" alt="Capa do bônus Do Edital ao Estudo" width="636" height="900" loading="lazy" />
     <img className="bundle-cover bundle-cover--main" src="/assets/capa-enfermagem-v3.webp" alt="Capa do Mapa da Aprovação em Enfermagem" width="800" height="1120" loading="lazy" />
+    <img className="bundle-devices" src="/assets/mockup-tablet-celular-cutout.png" alt="Tablet e celular exibindo mapas mentais" width="1536" height="1024" loading="lazy" />
   </div>;
 }
 
