@@ -2,12 +2,13 @@
 :root{--bg:#fff;--surface:#fff;--tint:#f8f9fc;--ink:#19233f;--text:#34415b;--muted:#667085;--line:#e6e9f0;--green:#6730a0;--green-dark:#51227e;--yellow:#eed154;--shadow:0 8px 24px rgba(25,35,63,.05)}
 body{background:#fff}
 body.preview-open{overflow:hidden}
-.brand-bar{min-height:46px;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;background:#19233f;color:#fff;font-size:12px;font-weight:700;letter-spacing:.08em;text-align:center}
-.brand-bar svg{color:#d7c1ee;flex:none}
+.brand-bar{min-height:42px;display:flex;align-items:center;justify-content:center;gap:10px;padding:8px 16px;background:#dc2626;color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em;text-align:center;overflow:hidden}
+.offer-countdown__copy,.offer-countdown__ended{white-space:nowrap}
+.offer-countdown__timer{display:inline-flex;align-items:center;justify-content:center;min-width:62px;padding:5px 8px;border-radius:5px;background:var(--yellow);color:#dc2626;font-size:14px;font-weight:800;line-height:1;letter-spacing:.02em;font-variant-numeric:tabular-nums}
 .hero{background:#fff;padding:30px 20px 60px}
 .hero-flow{gap:20px}
 .hero .hero-title{display:flex;flex-direction:column;align-items:center;gap:22px;width:100%;max-width:860px;font-size:inherit;line-height:inherit}
-.question-ribbon{display:block;width:100%;padding:14px 18px;border-radius:6px;background:#cd2344;color:#fff;font:800 clamp(21px,2.6vw,29px)/1.2 var(--font-title);letter-spacing:.015em;text-transform:uppercase}
+.question-ribbon{display:block;width:100%;padding:14px 18px;border-radius:6px;background:var(--green);color:#fff;font:800 clamp(21px,2.6vw,29px)/1.2 var(--font-title);letter-spacing:.015em;text-transform:uppercase}
 .hero-title-main{display:block;max-width:650px;color:var(--ink);font:800 clamp(30px,4.2vw,48px)/1.1 var(--font-title);letter-spacing:-.02em;text-wrap:balance}
 .hero-title-main strong{color:#6730a0;font-weight:800}
 .hero-media{width:min(580px,100%);height:350px;margin:0 auto}
@@ -143,8 +144,8 @@ body.preview-open{overflow:hidden}
  .receive-card ul{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
- .brand-bar{min-height:42px;padding:10px 14px;font-size:11px;letter-spacing:.035em;gap:8px}
- .brand-bar svg{width:16px;height:16px}
+ .brand-bar{min-height:40px;padding:8px 10px;font-size:10.5px;letter-spacing:.025em;gap:7px}
+ .offer-countdown__timer{min-width:56px;padding:5px 7px;font-size:13px}
  .hero{padding:20px 18px 36px}.hero-flow{gap:18px}
  .hero .hero-title{gap:17px}
  .question-ribbon{padding:12px 10px;font-size:20px;line-height:1.17;border-radius:5px;text-wrap:balance}
@@ -219,47 +220,46 @@ body.preview-open{overflow:hidden}
   color:#fff;
   font-weight:800;
   opacity:1;
-  box-shadow:0 7px 0 #15803d,0 18px 34px rgba(22,163,74,.32),0 0 28px rgba(22,163,74,.28);
+  box-shadow:0 7px 0 #15803d,0 18px 34px rgba(22,163,74,.32);
   transform:translateZ(0);
-  animation:offerCtaPulse 1.5s ease-in-out infinite;
+  animation:offerCtaBreath 2.5s ease-in-out infinite;
   transition:background-color .2s ease,box-shadow .2s ease,transform .2s ease;
 }
 .plan-card .btn--offer-cta::before{
   content:'';
   position:absolute;
-  inset:-5px;
+  inset:-6px;
   z-index:-1;
-  border-radius:15px;
-  background:rgba(22,163,74,.28);
-  opacity:0;
+  border-radius:17px;
+  background:rgba(22,163,74,.42);
+  box-shadow:0 0 16px 5px rgba(22,163,74,.62),0 0 34px 10px rgba(22,163,74,.42);
+  opacity:.42;
   pointer-events:none;
-  transform:scale(.98);
-  animation:offerCtaGlow 1.5s ease-out infinite;
+  transform:scale(.96);
+  animation:offerCtaGlow 2.5s ease-in-out infinite;
 }
 .plan-card .btn--offer-cta:hover{
   background:#15803d;
-  box-shadow:0 9px 0 #166534,0 22px 42px rgba(22,163,74,.42),0 0 36px rgba(22,163,74,.36);
+  box-shadow:0 9px 0 #166534,0 22px 42px rgba(22,163,74,.42);
   transform:translateY(-2px) scale(1.08);
   animation-play-state:paused;
 }
-.plan-card .btn--offer-cta:hover::before{animation-play-state:paused;opacity:.28}
 .plan-card .btn--offer-cta:active{
   transform:translateY(3px);
-  box-shadow:0 3px 0 #166534,0 12px 24px rgba(22,163,74,.30),0 0 24px rgba(22,163,74,.24);
+  box-shadow:0 3px 0 #166534,0 12px 24px rgba(22,163,74,.30);
+  animation-play-state:paused;
 }
 .plan-card .btn--offer-cta:focus-visible{
   outline:3px solid #7ee0a3;
   outline-offset:4px;
 }
-@keyframes offerCtaPulse{
-  0%,56%,100%{transform:scale(1);box-shadow:0 7px 0 #15803d,0 18px 34px rgba(22,163,74,.32),0 0 28px rgba(22,163,74,.28)}
-  68%{transform:scale(1.08);box-shadow:0 9px 0 #15803d,0 24px 46px rgba(22,163,74,.48),0 0 44px rgba(22,163,74,.44)}
-  80%{transform:scale(1);box-shadow:0 7px 0 #15803d,0 18px 34px rgba(22,163,74,.32),0 0 28px rgba(22,163,74,.28)}
+@keyframes offerCtaBreath{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.055)}
 }
 @keyframes offerCtaGlow{
-  0%,56%,100%{opacity:0;transform:scale(.98)}
-  60%{opacity:.36;transform:scale(1)}
-  82%{opacity:0;transform:scale(1.16)}
+  0%,100%{opacity:.42;transform:scale(.98)}
+  50%{opacity:1;transform:scale(1.07)}
 }
 @media(prefers-reduced-motion:reduce){
   .plan-card .btn--offer-cta,

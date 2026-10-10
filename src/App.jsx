@@ -6,9 +6,54 @@ import guaranteeSeal from '../img/Selo Dourado de Compra Protegida.png';
 
 const painIcons = [Clock3, Layers3, FileQuestion, BookOpen, Brain, AlertTriangle];
 const mechanismIcons = [BookOpen, SearchCheck, Layers3, ListChecks];
+const offerDurationMs = 30 * 60 * 1000;
+const offerDeadlineStorageKey = 'mapa-aprovacao-offer-deadline';
+
+function getOfferDeadline() {
+  const configuredDeadline = Date.parse(comercial.offerExpiresAt || '');
+  if (Number.isFinite(configuredDeadline)) return configuredDeadline;
+  if (typeof window === 'undefined') return Date.now() + offerDurationMs;
+
+  try {
+    const storedDeadline = Number(window.localStorage.getItem(offerDeadlineStorageKey));
+    if (Number.isFinite(storedDeadline) && storedDeadline > 0) return storedDeadline;
+
+    const nextDeadline = Date.now() + offerDurationMs;
+    window.localStorage.setItem(offerDeadlineStorageKey, String(nextDeadline));
+    return nextDeadline;
+  } catch {
+    return Date.now() + offerDurationMs;
+  }
+}
+
+function formatOfferTime(milliseconds) {
+  const totalSeconds = Math.max(0, Math.ceil(milliseconds / 1000));
+  const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+  const seconds = String(totalSeconds % 60).padStart(2, '0');
+  return `${minutes}:${seconds}`;
+}
+
+function OfferCountdownBar() {
+  const [deadline] = useState(getOfferDeadline);
+  const [now, setNow] = useState(() => Date.now());
+  const remaining = deadline - now;
+  const ended = remaining <= 0;
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setNow(Date.now()), 1000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return <header className="brand-bar" aria-live="polite">
+    {ended ? <span className="offer-countdown__ended">OFERTA ENCERRADA</span> : <>
+      <span className="offer-countdown__copy">OFERTA ESPECIAL TERMINA EM</span>
+      <span className="offer-countdown__timer">{formatOfferTime(remaining)}</span>
+    </>}
+  </header>;
+}
 
 function CTA({ label = 'QUERO O MAPA DA APROVAÇÃO', href = '#oferta', className = 'btn--primary' }) {
-  const showDownArrow = className.includes('btn--primary');
+  const showDownArrow = className.includes('btn--primary') || className.includes('btn--bonus');
   return <a className={`btn ${className}`.trim()} href={href}>{label}{showDownArrow && <ArrowDown size={20} aria-hidden="true" />}</a>;
 }
 
@@ -165,6 +210,8 @@ function ScrollRail({ children, label, className = '', interval = 1500, auto = f
 
 export default function App() {
   const checkoutEnabled = comercial.productReady && Boolean(comercial.checkoutUrl) && !comercial.price.startsWith('[') && !comercial.guarantee.startsWith('[');
+  const heroHighlight = '240 mapas mentais';
+  const heroHeadlineRest = content.hero.headline.startsWith(heroHighlight) ? content.hero.headline.slice(heroHighlight.length) : content.hero.headline;
   const [activePreviewIndex, setActivePreviewIndex] = useState(null);
   const activePreview = activePreviewIndex === null ? null : content.gallery[activePreviewIndex];
   const showPreview = direction => {
@@ -190,10 +237,10 @@ export default function App() {
   }, [activePreviewIndex]);
 
   return <>
-    <header className="brand-bar"><BookOpen size={19} aria-hidden="true"/><span>{content.productName}</span></header>
+    <OfferCountdownBar />
     <main>
       <section className="hero"><div className="content content--860 hero-flow">
-        <h1 className="hero-title"><span className="question-ribbon">{content.hero.question}</span><span className="hero-title-main"><strong>240</strong>{content.hero.headline.slice(3)}</span></h1>
+        <h1 className="hero-title"><span className="question-ribbon">{content.hero.question}</span><span className="hero-title-main"><strong>{heroHighlight}</strong>{heroHeadlineRest}</span></h1>
         <div className="hero-media"><ProductComposition /></div>
         <p className="hero-sub">{content.hero.subheadline}</p>
         <CTA href="#previas" label="QUERO VER O MATERIAL" />
@@ -228,8 +275,8 @@ export default function App() {
         <article className="plan-card" id="checkout"><p className="plan-badge">240 MAPAS · 9 MÓDULOS</p><p className="plan-kicker">OFERTA ESPECIAL</p><h3>Mapa da Aprovação em Enfermagem</h3>
           <div className="plan-mockup"><ProductBundleMockup /></div>
           <ul>{content.included.map(item => <li key={item}><Check size={20}/><span>{item}</span></li>)}</ul>
-          <div className="price"><span className="price-label">de</span><s className="price-original">R$ 97,90</s><span className="price-label">para</span><strong className="price-placeholder">{comercial.price.startsWith('[') ? 'Preço a definir' : comercial.price}</strong></div>
-          {checkoutEnabled ? <CTA href={comercial.checkoutUrl} className="btn--offer-cta" /> : <button type="button" className="btn btn--disabled btn--offer-cta" disabled>QUERO O MAPA DA APROVAÇÃO</button>}
+          <div className="price"><span className="price-label">de</span><s className="price-original">R$ 97,90</s><span className="price-label">por</span><strong className="price-placeholder">{comercial.price.startsWith('[') ? 'Preço a definir' : comercial.price}</strong></div>
+          {checkoutEnabled ? <CTA href={comercial.checkoutUrl} className="btn--offer-cta" label="QUERO O MEU MAPA AGORA" /> : <button type="button" className="btn btn--disabled btn--offer-cta" disabled>QUERO O MEU MAPA AGORA</button>}
         </article>
       </div></section>
 
