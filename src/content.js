@@ -25,12 +25,15 @@ export const content = {
     ]
   },
   gallery: [
-    ['/assets/SUS-01-thumb.webp', 'Direito à saúde'],
-    ['/assets/SUS-04-thumb.webp', 'Lei 8.080'],
-    ['/assets/SUS-06-thumb.webp', 'Universalidade, equidade e integralidade'],
-    ['/assets/SUS-20-thumb.webp', 'Tema de SUS'],
-    ['/assets/FUN-01-thumb.webp', 'Processo de Enfermagem'],
-    ['/assets/FUN-05-thumb.webp', 'Fundamentos de Enfermagem']
+    ['/assets/MOD-01-SUS-thumb.webp', 'SUS, Saúde Pública e Atenção Primária'],
+    ['/assets/MOD-02-FUN-thumb.webp', 'Fundamentos, Procedimentos e Segurança do Paciente'],
+    ['/assets/MOD-03-CLI-thumb.webp', 'Enfermagem Clínica e Cirúrgica'],
+    ['/assets/MOD-04-EPI-thumb.webp', 'Epidemiologia, Imunização e Doenças Transmissíveis'],
+    ['/assets/MOD-05-CIC-thumb.webp', 'Saúde da Mulher, Criança, Adolescente e Pessoa Idosa'],
+    ['/assets/MOD-06-MEN-thumb.webp', 'Saúde Mental e Atenção Psicossocial'],
+    ['/assets/MOD-07-URG-thumb.webp', 'Urgência, Emergência e Terapia Intensiva'],
+    ['/assets/MOD-08-ETI-thumb.webp', 'Ética e Legislação Profissional'],
+    ['/assets/MOD-09-GES-thumb.webp', 'Gestão e Organização do Trabalho em Enfermagem']
   ],
   mechanism: [
     ['SUS, Saúde Pública e Atenção Primária', '30 mapas'],
@@ -48,7 +51,7 @@ export const content = {
     emphasis: '3 BRINDES EXCLUSIVOS!',
     bonuses: [
       ['Questões da Aprovação — Gabarito Comentado', 'PDFs com questões e comentários para treinar sua revisão.', 'questions'],
-      ['Reino de Cálculos de Enfermagem', 'Caderno de exercícios para praticar cálculos de enfermagem.', 'notebook'],
+      ['Treino de Cálculos de Enfermagem', 'Caderno de exercícios para praticar cálculos de enfermagem.', 'notebook'],
       ['Do Edital ao Estudo — Organizador de Prioridades', 'Planilha editável para organizar prioridades de estudo.', 'spreadsheet']
     ]
   },

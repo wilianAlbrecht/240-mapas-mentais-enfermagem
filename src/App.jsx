@@ -25,18 +25,16 @@ function ProductComposition({ compact = false }) {
   </div>;
 }
 
+const bonusCovers = {
+  questions: ['/assets/bonus-gabarito-cover-thumb.webp', 'Capa do bônus Questões da Aprovação com gabarito comentado'],
+  notebook: ['/assets/bonus-calculos-cover-thumb.webp', 'Capa do bônus Treino de Cálculos de Enfermagem'],
+  spreadsheet: ['/assets/bonus-edital-cover-thumb.webp', 'Capa do bônus Do Edital ao Estudo']
+};
+
 function BonusMockup({ type }) {
-  if (type === 'questions') return <div className="bonus-mockup bonus-mockup--questions" aria-hidden="true">
-    <span className="mock-pdf mock-pdf--back" />
-    <span className="mock-pdf mock-pdf--middle" />
-    <span className="mock-pdf mock-pdf--front"><b>Q&A</b><i /><i /><i /><em>Comentado</em></span>
-  </div>;
-  if (type === 'notebook') return <div className="bonus-mockup bonus-mockup--notebook" aria-hidden="true">
-    <span className="mock-spiral" />
-    <span className="mock-notebook-page"><b>Cálculos</b><i>gotejamento</i><i>dosagem</i><i>conversão</i></span>
-  </div>;
-  return <div className="bonus-mockup bonus-mockup--spreadsheet" aria-hidden="true">
-    <span className="mock-screen"><b>Edital ao Estudo</b><i /><i /><i /><i /><i /><i /></span>
+  const [src, alt] = bonusCovers[type] || bonusCovers.questions;
+  return <div className={`bonus-mockup bonus-mockup--${type}`} aria-hidden="true">
+    <img className="bonus-cover" src={src} alt={alt} width="636" height="900" loading="lazy" />
   </div>;
 }
 
@@ -219,8 +217,8 @@ export default function App() {
         <article className="plan-card" id="checkout"><p className="plan-badge">240 MAPAS · 9 MÓDULOS</p><p className="plan-kicker">OFERTA ESPECIAL</p><h3>Mapa da Aprovação em Enfermagem</h3>
           <div className="plan-mockup"><ProductComposition compact /></div>
           <ul>{content.included.map(item => <li key={item}><Check size={20}/><span>{item}</span></li>)}</ul>
-          <div className="price"><strong className="price-placeholder">{comercial.price.startsWith('[') ? 'Preço a definir' : comercial.price}</strong><span>{comercial.installments}</span></div>
-          {checkoutEnabled ? <CTA href={comercial.checkoutUrl} /> : <button type="button" className="btn btn--disabled" disabled>QUERO O MAPA DA APROVAÇÃO <span aria-hidden="true">→</span></button>}
+          <div className="price"><s className="price-original">R$ 97,90</s><strong className="price-placeholder">{comercial.price.startsWith('[') ? 'Preço a definir' : comercial.price}</strong></div>
+          {checkoutEnabled ? <CTA href={comercial.checkoutUrl} className="btn--offer-cta" /> : <button type="button" className="btn btn--disabled btn--offer-cta" disabled>QUERO O MAPA DA APROVAÇÃO</button>}
         </article>
       </div></section>
 
@@ -236,7 +234,7 @@ export default function App() {
       </div></section> */}
 
       <section className="section purchase-safety"><div className="content content--1000 safety-layout">
-        <article className="guarantee-card"><img className="guarantee-seal" src={guaranteeSeal} alt="Selo de compra protegida" width="1254" height="1254"/><h2>GARANTIA INCONDICIONAL DE 7 DIAS</h2><p>Experimente por 7 dias. Se o produto não atender às suas expectativas, solicite seu dinheiro de volta dentro desse prazo, conforme as condições da garantia.</p></article>
+        <article className="guarantee-card"><img className="guarantee-seal" src={guaranteeSeal} alt="Selo de compra protegida" width="1254" height="1254"/><h2>7 DIAS DE GARANTIA.</h2><p>Você pode adquirir os Mapas Mentais hoje, acessar todo o conteúdo e conhecer o material com total tranquilidade.</p><p>Se por qualquer motivo não gostar ou sentir que não era o que esperava, basta solicitar o reembolso em até 7 dias diretamente pela plataforma de pagamento parceira.</p><p>Sem complicações, sem perguntas e com 100% do seu dinheiro de volta.</p></article>
         <div className="safety-cards"><article><FileCheck2 size={30}/><div><h3>Fontes indicadas</h3><p>Os mapas mostram as referências consultadas no rodapé da página.</p></div></article><article><MonitorSmartphone size={30}/><div><h3>Material digital</h3><p>As páginas estão em PDF A4 para consulta digital ou impressão.</p></div></article></div>
       </div></section>
 
