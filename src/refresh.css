@@ -69,7 +69,7 @@ body.preview-open{overflow:hidden}
 .bonus-item{display:flex;min-width:0;flex-direction:column;gap:18px;padding:18px;border:1px solid rgba(255,255,255,.28);border-radius:16px;background:rgba(255,255,255,.1)}
 .bonus-item h3{margin:0;color:#fff;font:800 22px/1.12 var(--font-title)}
 .bonus-item p{margin:8px 0 0;color:rgba(255,255,255,.86);font-size:14px;line-height:1.5}
-.bonus-mockup{position:relative;display:grid;place-items:center;height:210px;border-radius:12px;background:rgba(255,255,255,.13);overflow:hidden}
+.bonus-mockup{position:relative;display:grid;place-items:center;height:210px;border-radius:12px;background:transparent;overflow:hidden}
 .bonus-cover{display:block;width:auto;max-width:62%;height:84%;object-fit:contain;border-radius:6px;box-shadow:0 16px 28px rgba(25,35,63,.28),0 0 0 4px rgba(255,255,255,.85);transform:rotate(-3deg)}
 .bonus-mockup--notebook .bonus-cover{height:86%;transform:rotate(2deg)}
 .bonus-mockup--spreadsheet .bonus-cover{height:86%;transform:rotate(-1deg)}
@@ -104,6 +104,12 @@ body.preview-open{overflow:hidden}
 .plan-card h3{font-size:28px}
 .plan-card li{font-weight:400;font-size:14px;line-height:1.5}
 .plan-mockup{height:245px}
+.bundle-composition{position:relative;width:100%;height:100%;isolation:isolate}
+.bundle-cover{position:absolute;top:50%;left:50%;width:auto;height:70%;object-fit:contain;border-radius:6px;background:#fff;box-shadow:0 15px 22px rgba(25,35,63,.22);transform-origin:50% 92%}
+.bundle-cover--questions{z-index:1;transform:translate(calc(-50% - 126px),-48%) rotate(-12deg)}
+.bundle-cover--calculos{z-index:2;transform:translate(calc(-50% - 42px),-51%) rotate(-4deg)}
+.bundle-cover--main{z-index:4;transform:translate(calc(-50% + 42px),-51%) rotate(4deg);box-shadow:-5px 3px 0 #643299,-8px 4px 0 #e5dbea,0 18px 28px rgba(25,35,63,.25)}
+.bundle-cover--edital{z-index:3;transform:translate(calc(-50% + 126px),-48%) rotate(12deg)}
 .value-stack{border-radius:10px}
 .value-stack li{font-weight:400}
 .price .price-placeholder{font-size:27px}
@@ -168,7 +174,7 @@ body.preview-open{overflow:hidden}
  .receive-card ul{grid-template-columns:1fr;gap:12px}.receive-card li{font-size:13px}
  .access-badge{font-size:9.5px;padding:8px 10px}
  .plan-card{padding:32px 20px 24px}.plan-card h3{font-size:26px}.plan-card li{font-size:13px}
- .plan-mockup{height:225px}.plan-card .btn{font-size:12px;white-space:normal}
+ .plan-mockup{height:225px}.bundle-cover{height:64%}.bundle-cover--questions{transform:translate(calc(-50% - 84px),-48%) rotate(-12deg)}.bundle-cover--calculos{transform:translate(calc(-50% - 28px),-51%) rotate(-4deg)}.bundle-cover--main{transform:translate(calc(-50% + 28px),-51%) rotate(4deg)}.bundle-cover--edital{transform:translate(calc(-50% + 84px),-48%) rotate(12deg)}.plan-card .btn{font-size:12px;white-space:normal}
  .price .price-original{font-size:18px}.price .price-placeholder{font-size:48px}.offer-pending{font-size:11px}
  .guarantee-card{padding:26px 20px}.guarantee-seal{width:144px;height:144px;margin-bottom:15px}.guarantee-card h2{font-size:23px}.safety-cards article{padding:22px 20px}
  .faq summary{font-size:14px;padding:18px 0}.faq details p{font-size:13px}

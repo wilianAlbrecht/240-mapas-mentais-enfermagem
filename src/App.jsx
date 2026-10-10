@@ -25,6 +25,15 @@ function ProductComposition({ compact = false }) {
   </div>;
 }
 
+function ProductBundleMockup() {
+  return <div className="bundle-composition" aria-label="Capas do produto principal e dos bônus">
+    <img className="bundle-cover bundle-cover--bonus bundle-cover--questions" src="/assets/bonus-gabarito-cover-thumb.webp" alt="Capa do bônus Questões da Aprovação com gabarito comentado" width="636" height="900" loading="lazy" />
+    <img className="bundle-cover bundle-cover--bonus bundle-cover--calculos" src="/assets/bonus-calculos-cover-thumb.webp" alt="Capa do bônus Treino de Cálculos de Enfermagem" width="636" height="900" loading="lazy" />
+    <img className="bundle-cover bundle-cover--bonus bundle-cover--edital" src="/assets/bonus-edital-cover-thumb.webp" alt="Capa do bônus Do Edital ao Estudo" width="636" height="900" loading="lazy" />
+    <img className="bundle-cover bundle-cover--main" src="/assets/capa-enfermagem-v3.webp" alt="Capa do Mapa da Aprovação em Enfermagem" width="800" height="1120" loading="lazy" />
+  </div>;
+}
+
 const bonusCovers = {
   questions: ['/assets/bonus-gabarito-cover-thumb.webp', 'Capa do bônus Questões da Aprovação com gabarito comentado'],
   notebook: ['/assets/bonus-calculos-cover-thumb.webp', 'Capa do bônus Treino de Cálculos de Enfermagem'],
@@ -215,7 +224,7 @@ export default function App() {
 
       <section className="section offer" id="oferta"><div className="content content--720 section-flow">
         <article className="plan-card" id="checkout"><p className="plan-badge">240 MAPAS · 9 MÓDULOS</p><p className="plan-kicker">OFERTA ESPECIAL</p><h3>Mapa da Aprovação em Enfermagem</h3>
-          <div className="plan-mockup"><ProductComposition compact /></div>
+          <div className="plan-mockup"><ProductBundleMockup /></div>
           <ul>{content.included.map(item => <li key={item}><Check size={20}/><span>{item}</span></li>)}</ul>
           <div className="price"><s className="price-original">R$ 97,90</s><strong className="price-placeholder">{comercial.price.startsWith('[') ? 'Preço a definir' : comercial.price}</strong></div>
           {checkoutEnabled ? <CTA href={comercial.checkoutUrl} className="btn--offer-cta" /> : <button type="button" className="btn btn--disabled btn--offer-cta" disabled>QUERO O MAPA DA APROVAÇÃO</button>}
