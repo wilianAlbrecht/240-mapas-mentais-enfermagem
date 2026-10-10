@@ -7,8 +7,8 @@ import guaranteeSeal from '../img/Selo Dourado de Compra Protegida.png';
 const painIcons = [Clock3, Layers3, FileQuestion, BookOpen, Brain, AlertTriangle];
 const mechanismIcons = [BookOpen, SearchCheck, Layers3, ListChecks];
 
-function CTA({ label = 'QUERO O MAPA DA APROVAÇÃO', href = '#oferta' }) {
-  return <a className="btn" href={href}>{label}<span aria-hidden="true">→</span></a>;
+function CTA({ label = 'QUERO O MAPA DA APROVAÇÃO', href = '#oferta', className = 'btn--primary' }) {
+  return <a className={`btn ${className}`.trim()} href={href}>{label}</a>;
 }
 
 function SectionTitle({ children, lead }) {
@@ -187,7 +187,7 @@ export default function App() {
         <h1 className="hero-title"><span className="question-ribbon">{content.hero.question}</span><span className="hero-title-main"><strong>240</strong>{content.hero.headline.slice(3)}</span></h1>
         <div className="hero-media"><ProductComposition /></div>
         <p className="hero-sub">{content.hero.subheadline}</p>
-        <CTA href="#previas" />
+        <CTA href="#previas" label="QUERO VER O MATERIAL" />
         <ul className="hero-bullets">{content.hero.bullets.map(item => <li key={item}><Check size={20}/><span>{item}</span></li>)}</ul>
         <p className="avatar-proof">{content.hero.amplitude}</p>
       </div></section>
@@ -212,12 +212,10 @@ export default function App() {
       <section className="section mid-pitch"><div className="content content--1120 mid-bonus-layout">
         <header className="mid-pitch-copy mid-bonus-header"><h2>{content.midPitch.title} <strong className="bonus-title-accent">{content.midPitch.emphasis}</strong></h2></header>
         <div className="bonus-showcase">{content.midPitch.bonuses.map(([title, text, type]) => <article className="bonus-item" key={title}><BonusMockup type={type}/><div><h3>{title}</h3><p>{text}</p></div></article>)}</div>
-        <CTA />
+        <CTA className="btn--bonus" />
       </div></section>
 
       <section className="section offer" id="oferta"><div className="content content--720 section-flow">
-        <SectionTitle>A coleção para sua revisão de Enfermagem.</SectionTitle>
-        <div className="value-stack" aria-label="Composição da oferta"><p>O QUE VOCÊ RECEBE</p><ul><li><span>240 mapas mentais em 9 módulos de Enfermagem</span></li><li><span>PDF A4 digital para consultar ou imprimir</span></li><li><span>3 brindes exclusivos para apoiar sua preparação</span></li><li><span>Garantia incondicional de 7 dias</span></li></ul></div>
         <article className="plan-card" id="checkout"><p className="plan-badge">240 MAPAS · 9 MÓDULOS</p><p className="plan-kicker">OFERTA ESPECIAL</p><h3>Mapa da Aprovação em Enfermagem</h3>
           <div className="plan-mockup"><ProductComposition compact /></div>
           <ul>{content.included.map(item => <li key={item}><Check size={20}/><span>{item}</span></li>)}</ul>
