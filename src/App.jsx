@@ -222,7 +222,7 @@ function ScrollRail({ children, label, className = '', interval = 1500, auto = f
 }
 
 export default function App() {
-  const checkoutEnabled = comercial.productReady && Boolean(comercial.checkoutUrl) && !comercial.price.startsWith('[') && !comercial.guarantee.startsWith('[');
+  const checkoutEnabled = Boolean(comercial.checkoutUrl);
   const heroHighlight = '240 mapas mentais';
   const heroHeadlineRest = content.hero.headline.startsWith(heroHighlight) ? content.hero.headline.slice(heroHighlight.length) : content.hero.headline;
   const [activePreviewIndex, setActivePreviewIndex] = useState(null);
